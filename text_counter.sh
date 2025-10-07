@@ -85,21 +85,25 @@ done
     fi
 
 # Perform the selected action based on the user input
-# if action is process
+# if action is line
     if [[ $action == "line" ]]; then
         # count the number of lines in the text file
         echo "Counting the number of lines in '$filename' and the results will be stored in '$output_dir'."
-        lines=$(wc -w $filename | sed -n -e 's/^\([0-9]\+\).*/\1/p')
+        lines=$(wc -l $filename | sed -n -e 's/^\([0-9]\+\).*/\1/p')
         echo "There are $lines lines in $filename" > "$output_dir/results.txt"
-# else if action is analyze
+# else if action is word
     elif [[ $action == "word" ]]; then
         # count the number of words in the text file
         echo "Counting the number of words in '$filename' and the report will be stored in '$output_dir'."
         words=$(wc -w $filename | sed -n -e 's/^\([0-9]\+\).*/\1/p')
         echo "There are $words words in $filename" > "$output_dir/results.txt"
+#else if action is sentence
     elif [[ $action == "sentence" ]]; then
         # count the number of sentences in the text file
         echo "Counting the number of sentences in '$filename' and the report will be stored in '$output_dir'."
-        sentences=$(wc -w $filename | sed -n -e 's/^\([0-9]\+\).*/\1/p')
+        sentences=$(grep -Ev "^[ \t]*.+\.[^ ]" $filename | grep -Ec "^[ \t]*.+\." | sed -n -e 's/^\([0-9]\+\).*/\1/p')
         echo "There are $sentences sentences in $filename" > "$output_dir/results.txt"
     fi
+
+# include: "^[ \t]*.+\."
+# don't include: "^[ \t]*.+\.[^ ]" e.g. "15.0"
