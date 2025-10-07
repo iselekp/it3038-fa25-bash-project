@@ -1,4 +1,4 @@
-This bash script is for IT 3038C, a UC course, and intended to demonstrate options and arguments, output, regex and file handling. Specifically, the script counts features of the input text file depending on option arguments. The script handles errors such as invalid options and a nonexistent text file. Use the -h option to display the usage in bash:
+This bash script is for IT 3038, a UC course, and intended to demonstrate options and arguments, output, regex and file handling. Specifically, the script counts features of the input text file depending on option arguments. The script handles errors such as invalid options and a nonexistent text file. Use the -h option to display the usage in bash:
 
 text_counter -f <filename> -o <output_dir> -t <type>
 
