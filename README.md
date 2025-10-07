@@ -2,7 +2,7 @@ This bash script is for IT 3038C, a UC course, and intended to demonstrate optio
 text_counter -f <filename> -o <output_dir> -t <type>
 
   Options:
-    -f <filename>: Specify the input filename.
+    -f <filename>: Specify the input filename.\n
     -o <output_dir>: Specify the output directory where the results will be stored.
     -t <type>: Specify the type of action to perform. Supported types are 'line', 'word' and 'sentence'.
     -h: Display this help information.
