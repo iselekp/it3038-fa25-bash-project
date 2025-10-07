@@ -1,0 +1,1 @@
+This bash script is for the IT 3038C course to demonstrate options and arguments, output, regex and file handling. Specifically, the script counts features of the input text file depending on option arguments. The script handles errors such as invalid options and a nonexistent text file. Use the -h option to display the usage in bash:
